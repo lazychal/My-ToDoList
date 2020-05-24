@@ -2,7 +2,7 @@
   "name": "01-todolist",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lazychal.github.io/mytodolist",
+  "homepage": "https://lazychal.github.io/My-ToDoList/",
   "dependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
