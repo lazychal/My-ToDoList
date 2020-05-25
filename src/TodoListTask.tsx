@@ -25,7 +25,8 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
 
     state = {
         editMode: false,
-        title: this.props.task.title
+        title: this.props.task.title,
+        isChecked: false,
     };
 
     activateEditMode = () => {
@@ -39,6 +40,9 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
     };
     onDeleteTask = () => {
         this.props.deleteTask(this.props.task.id);
+    };
+    onIsChecked = () => {
+        this.setState({isChecked: true})
     };
 
     //Begin......................
@@ -64,16 +68,29 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
                 break;
         }
         return (
-            <div className={s.addSection}>
-                <input type="checkbox" checked={this.props.task.status === 2}
-                       onChange={this.onIsDoneChanged}/>
-                {this.state.editMode
-                    ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
-                             value={this.state.title}/>
-                    : <span onClick={this.activateEditMode}>{this.props.task.title}</span>
-                }, priority: {priotityTitle}
-                <button onClick={this.onDeleteTask}>X</button>
-            </div>
+            // <div className={s.task}>
+            //     <input type="checkbox" checked={this.props.task.status === 2}
+            //            onChange={this.onIsDoneChanged}/>
+            //     {this.state.editMode
+            //         ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
+            //                  value={this.state.title}/>
+            //         : <span onClick={this.activateEditMode}>{this.props.task.title}</span>
+            //     }, priority: {priotityTitle}
+            //     <button onClick={this.onDeleteTask}>X</button>
+            // </div>
+            <>
+                <p className={this.state.isChecked ? s.taskChecked : s.task}>
+                    {this.state.editMode
+                        ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
+                                 value={this.state.title}/>
+                        : <span onClick={this.activateEditMode}>{this.props.task.title}</span>
+                    }
+                    {/*{this.state.title}*/}
+                </p>
+                <i className={s.check} onClick={this.onIsChecked}/>
+                <i className={s.delete} onClick={this.onDeleteTask}/>
+
+            </>
         );
     }
 }

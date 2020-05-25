@@ -10,7 +10,12 @@
 .todoList > div {
   padding: 10px;
 }
-
+.todoList-header__title {
+  padding: 15px 0 5px;
+}
+.todoList-header__title span {
+  color: black;
+}
 .todoList-task {
 
 }
@@ -20,9 +25,38 @@
 }
 
 .filter-active {
-  background-color: blue;
+  background-color: #ffa600;
+  border: black solid 1px;
 }
 
 .error {
   border-color: red;
+}
+.todoList-footer {
+  display: flex;
+  justify-content: center;
+  width: 243px;
+  height: 30px;
+  margin: 10px 10px 10px 0;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.todoList-footer i {
+  padding: 5px 10px;
+  border: 1px solid #dbdbdb;
+  cursor: pointer;
+  background-color: #f7b71d;
+  color: white;
+  /*font-weight: bold;*/
+  font: 400 13px Arial;
+}
+#all {
+  border-radius: 15px 0 0 15px;
+}
+.classForCompleted {
+  /*border-radius: 15px 0 0 15px;*/
+}
+#active {
+  border-radius: 0 15px 15px 0;
 }

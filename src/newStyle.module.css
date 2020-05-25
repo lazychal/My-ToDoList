@@ -1,0 +1,116 @@
+.taskContainer {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 5px 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*отсебятина*/
+    flex-direction: column;
+}
+.task {
+    width: 170px;
+}
+.taskChecked {
+    width: 170px;
+    text-decoration: line-through;
+}
+/*Переделка*/
+
+.check i, .delete i {
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+.check i:hover {
+    color: #0c9463;
+}
+.delete i:hover {
+    color: #ff0000;
+}
+.check i:active {
+    transform: translateY(3px);
+}
+.delete i:active {
+    transform: translateY(3px);
+}
+.taskContainer:hover .check i, .taskContainer:hover .delete i {
+    opacity: 1;
+}
+/*Dalee*/
+
+.title {
+    width: 100%;
+    height: 25%;
+    /*background: url('background.jpeg');*/
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addSection {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    /*border-bottom: 1px solid #dbdbdb;*/
+}
+.taskInput {
+    margin: 10px 0 10px 10px;
+    padding: 10px;
+    width: 180px;
+    height: 40px;
+    border-radius: 15px 0 0 15px;
+    border: 1px solid #dbdbdb;
+    border-right: none;
+    outline: none;
+}
+.add {
+    width: 60px;
+    height: 40px;
+    margin: 10px 10px 10px 0;
+    background-color: #f7b71d;
+    color: white;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.add:hover {
+    background-color: #ffa600;
+}
+.MainAddNewItemForm {
+
+}
+.list {
+    width: 100%;
+    height: 60%;
+    padding: 0 10px 10px 10px;
+    overflow: auto;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #03ba9e;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    width: 250px;
+    height: 400px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 30px 55px 2px rgba(0, 0, 0, 0.46);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: default;
+}
+

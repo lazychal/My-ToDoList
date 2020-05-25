@@ -42,7 +42,7 @@ class App extends React.Component<MDTPType & MSTPType> {
             // Begin.......................
         return (
             <>
-                <div>
+                <div className={s.MainAddNewItemForm}>
                     <AddNewItemForm addItem={this.addTodoList}/>
                 </div>
                 <div className="App">

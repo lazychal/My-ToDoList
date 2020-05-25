@@ -53,7 +53,8 @@ class TodoListTitle extends React.Component<TLTType&FuncType> {
                         >{this.props.title}</span>
                     }
 
-                    <button onClick={this.props.onDelete}>X</button></h3>
+                    {/*<button onClick={this.props.onDelete}>X</button>*/}
+                </h3>
             </div>
         );
     }
