@@ -1,7 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
 import {api} from "./api";
-
+import s from "./newStyle.module.css";
 
 type FuncType = {
     updateTodoList: (todolistId: string, newTitle: string) => void
@@ -35,11 +35,11 @@ class TodoListTitle extends React.Component<TLTType&FuncType> {
                     });
             };
 
-
+// Begin........ Перед бегином обернул всё в дивку className={s.title}
    render = () => {
         return (
+            <div className={s.title}>
                 <h3 className="todoList-header__title">
-
                     { this.state.editMode
                         ? <input
                             onBlur={this.deactivateEditMode}
@@ -53,8 +53,8 @@ class TodoListTitle extends React.Component<TLTType&FuncType> {
                         >{this.props.title}</span>
                     }
 
-
                     <button onClick={this.props.onDelete}>X</button></h3>
+            </div>
         );
     }
 }

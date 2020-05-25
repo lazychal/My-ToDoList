@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TodoListTask from "./TodoListTask";
 import {TaskType} from "./types/entities";
+import s from "./newStyle.module.css";
 
 type FuncType = {
     changeStatus: (taskId: string, status: number) => void
@@ -12,6 +13,9 @@ type TLTType = {
     tasks: Array<TaskType>
 }
 
+
+// Begin............
+
 class TodoListTasks extends React.Component<FuncType & TLTType> {
     render = () => {
         let tasksElements = this.props.tasks.map(
@@ -21,7 +25,7 @@ class TodoListTasks extends React.Component<FuncType & TLTType> {
             />);
 
         return (
-            <div className="todoList-tasks">
+            <div className={s.list}>
                 {tasksElements}
             </div>
         );

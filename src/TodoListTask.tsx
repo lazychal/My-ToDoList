@@ -1,6 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
 import {TaskType} from "./types/entities";
+import s from "./newStyle.module.css";
 
 type TLTType = {
     task: TaskType
@@ -39,6 +40,9 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
     onDeleteTask = () => {
         this.props.deleteTask(this.props.task.id);
     };
+
+    //Begin......................
+
     render = () => {
         let containerCssClass = this.props.task.isDone ? "todoList-task done" : "todoList-task";
         let priotityTitle = "";
@@ -60,7 +64,7 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
                 break;
         }
         return (
-            <div className={containerCssClass}>
+            <div className={s.addSection}>
                 <input type="checkbox" checked={this.props.task.status === 2}
                        onChange={this.onIsDoneChanged}/>
                 {this.state.editMode

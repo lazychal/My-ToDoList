@@ -15,6 +15,7 @@ import {
     updateTodoListAC
 } from "./reducer";
 import {ChangeTaskType, TaskType} from "./types/entities";
+import s from "./newStyle.module.css";
 
 
 type MDTPType = {
@@ -33,6 +34,8 @@ type AnotherType = {
     tasks: Array<TaskType>
     title: string
 }
+
+// Begin..............................
 
 class TodoList extends React.Component<MDTPType&AnotherType> {
 
@@ -90,7 +93,7 @@ class TodoList extends React.Component<MDTPType&AnotherType> {
     render = () => {
         let {tasks = []} = this.props;
         return (
-                <div className="todoList">
+                <div className={s.container}>
                     <div className="todoList-header">
                             <TodoListTitle
                                 title={this.props.title}

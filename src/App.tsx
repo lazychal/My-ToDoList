@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {createTodoListTC, getTodolistTC} from "./reducer";
 import {TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
+import s from './newStyle.module.css'
 
 type MDTPType = {
     addTodoList?: (title: string)=> void
@@ -38,7 +39,7 @@ class App extends React.Component<MDTPType & MSTPType> {
         const todolists = this.props
             .todolists
             .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks}/>);
-
+            // Begin.......................
         return (
             <>
                 <div>

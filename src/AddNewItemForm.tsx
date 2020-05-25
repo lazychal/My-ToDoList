@@ -1,5 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
+import s from "./newStyle.module.css";
 
 type FunctionType = {
     addItem: (title: string)=> void
@@ -39,17 +40,17 @@ class AddNewItemForm extends React.Component<FunctionType> {
         }
     };
 
-
+// Begin........................
     render = () => {
         let classNameForInput = this.state.error ? "error" : "";
 
         return (
-            <div className="todoList-newTaskForm">
-                <input className={classNameForInput} type="text" placeholder="New item name"
+            <div className={s.addSection}>
+                <input className={s.taskInput} type="text" placeholder="New item name"
                        onChange={this.onTitleChanged}
                        onKeyPress={this.onKeyPress}
                        value={this.state.title}/>
-                <button onClick={this.onAddItemClick}>Add</button>
+                <button className={s.add} onClick={this.onAddItemClick}>Add</button>
             </div>
 
         );
