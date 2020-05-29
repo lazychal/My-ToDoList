@@ -2,6 +2,9 @@ import React, {ChangeEvent} from 'react';
 import './App.css';
 import {TaskType} from "./types/entities";
 import s from "./newStyle.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
+import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
 
 type TLTType = {
     task: TaskType
@@ -14,7 +17,7 @@ type FuncType = {
 
 class TodoListTask extends React.Component<TLTType & FuncType> {
 
-    onIsDoneChanged = (e: ChangeEvent<HTMLInputElement>) => {
+    onIsDoneChanged = (e: any) => {
         let status = e.currentTarget.checked ? 2 : 0;
         this.props.changeStatus(this.props.task.id, status);
     };
@@ -44,7 +47,10 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
     onIsChecked = () => {
         this.setState({isChecked: true})
     };
-
+    onHovered=(e:React.MouseEvent<HTMLSpanElement>)=>{
+        let a = e;
+        // debugger
+    };
     //Begin......................
 
     render = () => {
@@ -79,16 +85,23 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
             //     <button onClick={this.onDeleteTask}>X</button>
             // </div>
             <>
-                <p className={this.state.isChecked ? s.taskChecked : s.task}>
-                    {this.state.editMode
-                        ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
-                                 value={this.state.title}/>
-                        : <span onClick={this.activateEditMode}>{this.props.task.title}</span>
-                    }
-                    {/*{this.state.title}*/}
-                </p>
-                <i className={s.check} onClick={this.onIsChecked}/>
-                <i className={s.delete} onClick={this.onDeleteTask}/>
+                <div className={this.state.isChecked ? s.taskChecked : s.task}>
+                    <span>
+                        {this.state.editMode
+                            ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
+                                     value={this.state.title}/>
+                            : <span onMouseOver={this.onHovered} onClick={this.activateEditMode}>{this.props.task.title}</span>
+                        }
+                    </span>
+                    <span className={s.FA}>
+                        <FontAwesomeIcon icon={faCheck} className={s.check} onClick={this.onIsDoneChanged}/>
+                        <FontAwesomeIcon icon={faTrashAlt} className={s.delete} onClick={this.onDeleteTask}/>
+                    </span>
+
+                </div>
+
+                {/*<i className={s.check} onClick={this.onIsChecked}/>*/}
+                {/*<i className={s.delete} onClick={this.onDeleteTask}/>*/}
 
             </>
         );

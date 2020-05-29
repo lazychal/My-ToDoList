@@ -1,16 +1,22 @@
-import React, {ChangeEvent} from 'react';
+import React, {ChangeEvent, CSSProperties} from 'react';
 import './App.css';
 import s from "./newStyle.module.css";
+import background from './assets/images/background.jpg'
 
 type FunctionType = {
     addItem: (title: string)=> void
 }
+
+const styles: CSSProperties = {
+    backgroundImage:`url(${background})`
+};
 
 class AddNewItemForm extends React.Component<FunctionType> {
     state = {
         error: false,
         title: ""
     };
+
 
     onAddItemClick = () => {
         let newText = this.state.title;
@@ -39,6 +45,7 @@ class AddNewItemForm extends React.Component<FunctionType> {
             this.onAddItemClick();
         }
     };
+
 
 // Begin........................
     render = () => {

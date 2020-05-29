@@ -3,6 +3,11 @@
   flex-direction: row;
 }
 
+.todoList-header {
+  flex: 1;
+  background-image: url('./assets/images/background.jpg');
+}
+
 .todoList {
   width: 300px;
 }
@@ -12,6 +17,7 @@
 }
 .todoList-header__title {
   padding: 15px 0 5px;
+
 }
 .todoList-header__title span {
   color: black;
