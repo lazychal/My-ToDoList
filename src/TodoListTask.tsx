@@ -85,7 +85,7 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
             //     <button onClick={this.onDeleteTask}>X</button>
             // </div>
             <>
-                <div className={this.state.isChecked ? s.taskChecked : s.task}>
+                <div className={(this.state.isChecked ? s.taskChecked : s.task) + ' ' + s.taskA}>
                     <span>
                         {this.state.editMode
                             ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}

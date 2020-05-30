@@ -47,7 +47,7 @@
 .delete:active {
     transform: translateY(3px);
 }
-.taskContainer:hover .check, .taskContainer:hover .delete {
+.taskA:hover .check, .taskA:hover .delete {
     opacity: 1;
 }
 /*Dalee*/
