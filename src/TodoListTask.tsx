@@ -17,8 +17,8 @@ type FuncType = {
 
 class TodoListTask extends React.Component<TLTType & FuncType> {
 
-    onIsDoneChanged = (e: any) => {
-        let status = e.currentTarget.checked ? 2 : 0;
+    onIsDoneChanged = () => {
+        let status = this.props.task.status === 2 ? 0 : 2;
         this.props.changeStatus(this.props.task.id, status);
     };
 
@@ -83,10 +83,10 @@ class TodoListTask extends React.Component<TLTType & FuncType> {
             //         : <span onClick={this.activateEditMode}>{this.props.task.title}</span>
             //     }, priority: {priotityTitle}
             //     <button onClick={this.onDeleteTask}>X</button>
-            // </div>
+            // </div> `${classes.Section1} ${classes.Section2}`
             <>
-                <div className={(this.state.isChecked ? s.taskChecked : s.task) + ' ' + s.taskA}>
-                    <span>
+                <div className={s.task + ' ' + s.taskA}>
+                    <span className={(this.props.task.status ? s.taskChecked : s.taskValue)}>
                         {this.state.editMode
                             ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
                                      value={this.state.title}/>

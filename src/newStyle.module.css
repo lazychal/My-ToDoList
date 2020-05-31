@@ -1,3 +1,33 @@
+
+.container {
+    width: 330px;
+    height: 470px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 30px 55px 2px rgba(0, 0, 0, 0.46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    cursor: default;
+}
+.container:hover .deleteTodoList {
+    opacity: 1;
+}
+.deleteTodoList {
+    opacity: 0;
+    position: fixed;
+    margin: 8px 270px;
+    cursor: pointer;
+}
+.circle{
+
+}
+.circle:hover{
+    color: #ff0000;
+}
+
 .taskContainer {
     border-bottom: 1px solid #dbdbdb;
     padding: 5px 0 5px;
@@ -8,7 +38,7 @@
     flex-direction: column;
 }
 .task {
-    width: 290px;
+    width: 270px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +47,9 @@
 }
 .task:hover {
     background-color: #FDE9B9;
+}
+.taskValue {
+
 }
 .taskChecked {
     width: 270px;
@@ -116,17 +149,3 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
-.container {
-    width: 350px;
-    height: 470px;
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 30px 55px 2px rgba(0, 0, 0, 0.46);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    cursor: default;
-}
-

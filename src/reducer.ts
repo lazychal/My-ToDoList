@@ -225,9 +225,12 @@ export const changeTaskNowTC = (taskId: string, obj: ChangeTaskType, todoListId:
     async (dispatch) => {
     tasks.forEach(t => {
         if (t.id === taskId) {
+            debugger
             api.updateTask(t, obj)
                 .then(res => {
-                    dispatch(updateTaskAC(taskId, obj, todoListId, tasks));
+
+                    let changedTask = res.data.data.item;
+                    dispatch(updateTaskAC(taskId, changedTask, todoListId, tasks));
                 });
         }
     })

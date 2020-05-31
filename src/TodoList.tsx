@@ -16,6 +16,8 @@ import {
 } from "./reducer";
 import {ChangeTaskType, TaskType} from "./types/entities";
 import s from "./newStyle.module.css";
+import {faCheck, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 type MDTPType = {
@@ -95,6 +97,9 @@ class TodoList extends React.Component<MDTPType&AnotherType> {
         return (
                 <div className={s.container}>
                     <div className="todoList-header">
+                        <span className={s.deleteTodoList} title='Delete this list'>
+                            <FontAwesomeIcon icon={faTimesCircle} className={s.circle} onClick={this.deleteTodolist} />
+                        </span>
                             <TodoListTitle
                                 title={this.props.title}
                                 todolistId={this.props.id}
