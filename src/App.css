@@ -4,10 +4,13 @@
 }
 
 .todoList-header {
-  flex: 1;
+  display: block;
   background-image: url('./assets/images/background.jpg');
+  background-size: cover;
 }
-
+.todoList-header.max {
+  width: 100%;
+}
 .todoList {
   width: 300px;
 }
@@ -20,7 +23,7 @@
 
 }
 .todoList-header__title span {
-  color: black;
+  color: #dbdbdb;
 }
 .todoList-task {
 
@@ -43,7 +46,7 @@
   justify-content: center;
   width: 243px;
   height: 30px;
-  margin: 10px 10px 10px 0;
+  margin: 25px 10px 10px 0;
   border: none;
   outline: none;
   transition: all 0.2s ease-in-out;

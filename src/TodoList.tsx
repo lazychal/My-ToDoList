@@ -96,7 +96,7 @@ class TodoList extends React.Component<MDTPType&AnotherType> {
         let {tasks = []} = this.props;
         return (
                 <div className={s.container}>
-                    <div className="todoList-header">
+                    <div className="todoList-header max">
                         <span className={s.deleteTodoList} title='Delete this list'>
                             <FontAwesomeIcon icon={faTimesCircle} className={s.circle} onClick={this.deleteTodolist} />
                         </span>

@@ -18,8 +18,9 @@
 .deleteTodoList {
     opacity: 0;
     position: fixed;
-    margin: 8px 270px;
+    margin: 8px 300px;
     cursor: pointer;
+    color: #dbdbdb;
 }
 .circle{
 
@@ -96,10 +97,9 @@
 }
 .addSection {
     width: 100%;
-    height: 15%;
+    height: 60%;
     display: flex;
-
-    /*border-bottom: 1px solid #dbdbdb;*/
+    justify-content: center;
 }
 .taskInput {
     margin: 10px 0 10px 10px;
