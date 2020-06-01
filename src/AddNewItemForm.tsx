@@ -1,15 +1,11 @@
-import React, {ChangeEvent, CSSProperties} from 'react';
+import React, {ChangeEvent} from 'react';
 import './App.css';
 import s from "./newStyle.module.css";
-import background from './assets/images/background.jpg'
 
 type FunctionType = {
     addItem: (title: string)=> void
 }
 
-const styles: CSSProperties = {
-    backgroundImage:`url(${background})`
-};
 
 class AddNewItemForm extends React.Component<FunctionType> {
     state = {
@@ -49,7 +45,6 @@ class AddNewItemForm extends React.Component<FunctionType> {
 
 // Begin........................
     render = () => {
-        let classNameForInput = this.state.error ? "error" : "";
 
         return (
             <div className={s.addSection}>

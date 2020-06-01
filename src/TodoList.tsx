@@ -16,7 +16,7 @@ import {
 } from "./reducer";
 import {ChangeTaskType, TaskType} from "./types/entities";
 import s from "./newStyle.module.css";
-import {faCheck, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import {faTimesCircle} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
